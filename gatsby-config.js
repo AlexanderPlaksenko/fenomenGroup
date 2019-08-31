@@ -1,8 +1,8 @@
 module.exports = {
     siteMetadata: {
-        title: `HiStaff`,
-        description: `Make your Staff and Workspace Happy`,
-        author: `@mostafasoufi`,
+        title: `Fenomen Group`,
+        description: `Помощник руководителя отдела продаж`,
+        author: `@AlexanderPlx`,
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
@@ -21,10 +21,10 @@ module.exports = {
                 name: `gatsby-starter-default`,
                 short_name: `starter`,
                 start_url: `/`,
-                background_color: `#663399`,
-                theme_color: `#FF54AC`,
+                background_color: `#0066FF`,
+                theme_color: `#0087FF`,
                 display: `minimal-ui`,
-                icon: `${__dirname}/static/images/histaff.png`, // This path is relative to the root of the site.
+                icon: `${__dirname}/static/images/logo_next.png`, // This path is relative to the root of the site.
             },
         },
         `gatsby-plugin-sass`,
@@ -35,11 +35,12 @@ module.exports = {
                     families: ['PT Serif'],
                 },
                 custom: {
-                    families: ['Inter'],
+                    families: ['Inter', 'Open Sans'],
                     urls: ['/fonts/fonts.css']
                 }
             }
         },
+        'gatsby-plugin-postcss',
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
         // `gatsby-plugin-offline`,

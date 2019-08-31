@@ -1,3 +1,17 @@
+// @import "tailwindcss/base";
+// @import "tailwindcss/components";
+
+@mixin placeholder {
+  &::-webkit-input-placeholder { @content; }
+  &:-moz-placeholder           { @content; }
+  &::-moz-placeholder          { @content; }
+  &:-ms-input-placeholder      { @content; }
+}
+
+@import "../../node_modules/semantic-ui-css/semantic.min.css";
+@import "../../node_modules/tailwindcss/dist/base.css";
+@import "../../node_modules/tailwindcss/dist/utilities.css";
+
 @import "variables";
 @import "reset";
 @import "grid";

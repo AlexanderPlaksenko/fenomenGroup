@@ -1,70 +1,51 @@
 $break-small: 719px;
 
 body {
-  font-family: Inter;
+  font-family: -apple-system, "Open Sans", sans-serif;
+
+  background-color: $bg_color_next;
   color: #797283;
 
   p {
-    font-family: Inter;
+    font-family: -apple-system, "Open Sans", sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: PT Serif;
-    line-height: 43px;
-    color: #1E1C21;
+  h1, h2, h3, h4, h5, h6, p {
+    font-family: -apple-system, "Open Sans", sans-serif;
+    color: $white;
   }
 
   a {
     color: #8953B7;
 
     &:hover, &:active {
-      color: #8953b7;
+      color: fade_out($white, .10);
     }
   }
 
   header {
-    background-color: #FDFAFF;
     display: block;
-    padding: 39px 0;
+    padding: 15px 0;
 
     .logo {
       img {
-        width: 151px;
-        height: 44px;
-      }
-    }
-
-    .top-menu {
-      display: flex;
-      justify-content: space-between;
-
-      .get-started {
-        a {
-          width: 160px;
-          height: 47px;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 16px;
-          line-height: 47px;
-          display: block;
-          background: #8953B7;
-          border-radius: 4px;
-          text-align: center;
-          color: #FFFFFF;
-        }
+        width: 250px;
       }
     }
   }
 
   .page-header {
     text-align: center;
-    padding: 100px 0 100px 0;
-    background-color: #fdfaff;
+    padding: 25px 0 75px 0;
     border-radius: 0px 0px 40px 40px;
+    margin-bottom: 60px;
 
     @media screen and (max-width: $break-small) {
       padding-top: 1px;
       padding-bottom: 50px;
+
+      flex-direction: column;
+      align-items: center;
 
       h1, h2 {
         padding-top: 0;
@@ -72,12 +53,11 @@ body {
     }
 
     h1 {
-      font-style: normal;
-      font-weight: bold;
-      font-size: 48px;
-      color: #1E1C21;
+      font-size: 46px;
+      color: $white;
       padding: 0 0 15px 0;
       line-height: 54px;
+      margin-bottom: 15px;
     }
 
     h2 {
@@ -93,15 +73,39 @@ body {
       font-weight: normal;
       font-size: 20px;
       line-height: 34px;
+      color: $white;
     }
 
     img {
-      margin-top: 61px;
+      margin-top: 20px;
       max-width: 100%;
+      margin-bottom: 40px;
     }
 
     &.home {
       padding-bottom: 30px;
+    }
+  }
+
+  .top-menu {
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: $break-small) {
+      flex-direction: column;
+      align-items: center;
+      .logo, .get-started {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    @media screen and (min-width: $break-small) {
+      .get-started {
+        align-items: flex-end;
+        flex-direction: column;
+        display: inline-flex;
+      }
     }
   }
 
@@ -127,12 +131,13 @@ body {
           font-size: 36px;
           font-weight: bold;
           margin-bottom: 15px;
-          color: #1E1C21;
+          color: $white;
         }
 
         p {
           font-size: 18px;
           line-height: 26px;
+          color: $white;
         }
       }
 
@@ -313,7 +318,7 @@ body {
               color: #797283;
 
               &:hover, &:active {
-                color: #8953b7;
+                color: fade_out($white, .10);
               }
             }
           }
@@ -324,6 +329,7 @@ body {
           color: #ffffff;
           border-radius: 4px;
           padding: 2px 5px;
+
           &:hover {
             color: #ffffff;
           }
@@ -367,6 +373,150 @@ body {
       p {
         font-size: 13px;
       }
+    }
+  }
+}
+
+.phone {
+  font-size: 24px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: $white;
+}
+
+.callback {
+
+}
+
+.first-section-list {
+  font-size: 20px;
+
+  p:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: fade_out($white, .95);
+  background-clip: padding-box;
+  border: 2px solid $white;
+  border-radius: 40px;
+  outline: none;
+  transition: all .15s ease;
+  @include placeholder {
+    color: fade_out($white, .25);
+  }
+
+  &:focus, &:hover {
+    background-color: fade_out($white, 1);
+    color: $white;
+
+    @include placeholder {
+      color: $white;
+    }
+  }
+}
+
+.contact-form {
+  background-repeat: no-repeat;
+  background-position: center;
+
+  .form-group {
+    input,
+    textarea {
+      padding: 20px;
+    }
+
+    input.form-control {
+      height: auto;
+    }
+
+    textarea.form-control {
+      height: 248px;
+    }
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+  }
+
+  ::-webkit-input-placeholder {
+    font-weight: 400;
+
+  }
+
+  :-moz-placeholder {
+    font-weight: 400;
+
+  }
+
+  ::-moz-placeholder {
+    font-weight: 400;
+
+  }
+
+  :-ms-input-placeholder {
+    font-weight: 400;
+
+  }
+
+  .form-button {
+    padding: 20px;
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.5;
+    border: 1px solid $white;
+  }
+}
+
+.default-button {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  background: $white;
+  text-align: center;
+  color: $bg_color_next;
+  border-radius: 40px;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+
+  transition: all .15s ease;
+
+  &:focus, &:hover {
+    background-color: fade_out($white, .10);
+  }
+}
+
+.page-header-hero {
+  padding: 80px 0;
+
+  @media screen and (max-width: $break-small) {
+    padding: 40px 0;
+  }
+}
+
+.fenomen-accordion {
+  margin-top: 30px;
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &.ui.styled.accordion {
+    box-shadow: none;
+    background: none;
+
+    .title {
+      color: $white;
     }
   }
 }

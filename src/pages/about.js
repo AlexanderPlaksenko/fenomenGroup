@@ -12,8 +12,8 @@ const AboutPage = () => (
         <SEO title="About"/>
 
         <div className={"page-header"}>
-            <h2>What’s HiStaff?</h2>
-            <p>HiStaff is a service that boost the staff’s productivity by offering new ways<br />to increase employee motivation and happiness.</p>
+            <h2>What’s Fenomen.group?</h2>
+            <p>Fenomen.group is a service that boost the staff’s productivity by offering new ways<br />to increase employee motivation and happiness.</p>
         </div>
 
         <div className={"container"}>
@@ -27,7 +27,7 @@ const AboutPage = () => (
                         <div className={"item"}>
                             <img alt={"Information"} src={informationImage}/>
                             <h3>Handling of Employes’s Information and documents</h3>
-                            <p>Having a human management software for businesses and startups is not always cost-effective. HiStaff allows companies to archive their employees' documents and information free of charge.</p>
+                            <p>Having a human management software for businesses and startups is not always cost-effective. Fenomen.group allows companies to archive their employees' documents and information free of charge.</p>
                         </div>
                     </div>
 
@@ -35,7 +35,7 @@ const AboutPage = () => (
                         <div className={"item"}>
                             <img alt={"Event"} src={eventImage}/>
                             <h3>Manage Events</h3>
-                            <p>How to hold internal events is one of the problems of companies. HiStaff by presenting new ideas allows event management to be done as easily as possible.</p>
+                            <p>How to hold internal events is one of the problems of companies. Fenomen.group by presenting new ideas allows event management to be done as easily as possible.</p>
                         </div>
                     </div>
                 </div>
