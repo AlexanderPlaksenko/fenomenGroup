@@ -35,15 +35,17 @@ export default class AccordionExampleStyled extends Component {
 			let sub_text = item.sub_text;
 			return <Accordion className={"fenomen-accordion"} key={sub_id} styled fluid>
 				<Accordion.Title
+					className={'accordion-title '}
 					active={activeIndex === sub_id}
 					index={sub_id}
 					onClick={this.handleClick}
 				>
-					{sub_title}
+					<span className={'accordion-count font-light'}>0{sub_id+1}.</span>
+					<span className={'mr-auto ml-1'}>{sub_title}</span>
 					<Icon name={activeIndex === sub_id ? 'minus square outline':'plus square outline'}/>
 				</Accordion.Title>
-				<Accordion.Content active={activeIndex === sub_id}>
-					<p>
+				<Accordion.Content className={'accordion-content'} active={activeIndex === sub_id}>
+					<p className={'accordion-text'}>
 						{sub_text}
 					</p>
 				</Accordion.Content>
