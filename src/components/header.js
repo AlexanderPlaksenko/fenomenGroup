@@ -18,7 +18,7 @@ class Header extends Component {
 	render() {
 		let {siteTitle} = this.props;
 		return (
-			<header className={"row"}>
+			<header className={"row header"}>
 				<div className="container">
 					<div className={"top-menu"}>
 						<div className={"logo col-4"}>
@@ -42,7 +42,7 @@ class Header extends Component {
 									size='mini'
 								>
 									<Modal.Content className={'callback-modal'}>
-										<FeedbackForm hideEmail={true}/>
+										<FeedbackForm hideEmail={true} buttonName={'Заказать звонок'}/>
 									</Modal.Content>
 								</Modal>
 							</div>

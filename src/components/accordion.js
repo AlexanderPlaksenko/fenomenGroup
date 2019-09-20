@@ -15,7 +15,7 @@ let tabs = db.section2.tabs.map(function (item) {
 });
 
 export default class AccordionExampleStyled extends Component {
-	state = {activeIndex: 0}
+	state = {activeIndex: ''}
 
 	handleClick = (e, titleProps) => {
 		e.preventDefault();

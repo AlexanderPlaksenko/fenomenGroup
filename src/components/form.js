@@ -12,7 +12,8 @@ class FeedbackForm extends Component {
 			emailValue: '',
 			mailSent: false,
 			visible: false,
-			hideEmail: false
+			hideEmail: false,
+			buttonName: 'Получить консультацию'
 		};
 	}
 
@@ -58,12 +59,16 @@ class FeedbackForm extends Component {
 	render() {
 		const {visible} = this.state;
 		const hideEmail = this.props.hideEmail;
+		const buttonName = this.props.buttonName || 'Получить консультацию';
 		return (
 			<div className={'w-full'}>
 				<Form className={"contact-form"}
 				      ref="form"
 				      onSubmit={this.handleSubmit}
+							title={"Обсудим ваш проект?"}
 				>
+					{hideEmail ? ''
+					: <h2 className={'head-2 text-center'}>Обсудим ваш проект?</h2>}
 					<div className="row">
 						<div className="col-3">
 							<div className="form-group">
@@ -106,8 +111,7 @@ class FeedbackForm extends Component {
 								</div>
 							</div>}
 						<div className="col-3">
-							<Button className="default-button form-button">Получить
-								консультацию
+							<Button className="default-button form-button">{buttonName}
 							</Button>
 						</div>
 					</div>

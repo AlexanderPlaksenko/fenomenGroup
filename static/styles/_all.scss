@@ -1,4 +1,4 @@
-$break-small: 719px;
+$break-small: 768px;
 
 body {
   font-family: -apple-system, "Open Sans", sans-serif;
@@ -24,14 +24,31 @@ body {
   }
 
   header {
+    &.header {
+      position: fixed;
+      z-index: 1;
+      background-color: $bg_color_next;
+
+      @media screen and (max-width: $break-small) {
+        position: relative;
+
+        .container {
+          width: 97%;
+        }
+      }
+    }
     display: block;
-    padding: 15px 0;
+    padding: 15px 0 0 0;
+
+    @media screen and (max-width: $break-small) {
+      padding: 5px 0;
+    }
 
     .logo {
       img {
-        width: 250px;
+        width: 220px;
         @media screen and (max-width: $break-small) {
-          width: 215px;
+          width: 150px;
         }
       }
     }
@@ -51,15 +68,12 @@ body {
     }
 
     h1 {
-      font-size: 46px;
+      font-size: 24px;
       color: $white;
       padding: 0 0 15px 0;
-      line-height: 54px;
-      margin-bottom: 15px;
-      @media screen and (max-width: $break-small) {
-        font-size: 36px;
-        line-height: 42px;
-      }
+      line-height: 26px;
+      margin-bottom: 10px;
+
     }
 
     h2 {
@@ -94,12 +108,10 @@ body {
     justify-content: space-between;
 
     @media screen and (max-width: $break-small) {
-      flex-direction: column;
       align-items: center;
       .logo, .get-started {
         display: flex;
         flex-direction: column;
-        align-items: center;
       }
     }
     @media screen and (min-width: $break-small) {
@@ -113,7 +125,6 @@ body {
 
   .features {
     .feature__item {
-      padding: 4em 0;
 
       .row {
         display: flex;
@@ -128,13 +139,6 @@ body {
         justify-content: center;
         display: flex;
         flex-direction: column;
-
-        h2 {
-          font-size: 36px;
-          font-weight: bold;
-          margin-bottom: 15px;
-          color: $white;
-        }
 
         p {
           font-size: 18px;
@@ -396,6 +400,13 @@ body {
   margin-top: 15px;
   margin-bottom: 15px;
   color: $white;
+
+  @media screen and (max-width: $break-small) {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
 }
 
 .callback {
@@ -488,7 +499,7 @@ body {
 
   .ui.button.form-button,
   .form-button {
-    padding: 20px;
+    padding: 20px 0px;
     width: 100%;
     font-size: 1rem;
     line-height: 1.5;
@@ -539,8 +550,16 @@ body {
 .page-header-hero {
   padding: 4em 0;
 
+  > * {
+    margin: 0 auto;
+    max-width: 55%;
+  }
+
   @media screen and (max-width: $break-small) {
     padding: 2em 0;
+    > * {
+      max-width: 100%;
+    }
   }
 }
 
@@ -565,6 +584,11 @@ body {
     .accordion-title {
       font-size: 22px;
       color: $white;
+
+      @media screen and (max-width: $break-small) {
+        font-size: 18px;
+        font-weight: 400;
+      }
     }
 
     .accordion-text {
@@ -574,6 +598,10 @@ body {
     .accordion-count {
       font-size: 24px;
       opacity: 0.5;
+
+      @media screen and (max-width: $break-small) {
+        font-size: 20px;
+      }
     }
   }
 }
@@ -585,10 +613,12 @@ body {
 .head-1 {
   font-size: 40px;
   line-height: 48px;
+  margin-bottom: 3.5rem;
 
   @media screen and (max-width: $break-small) {
-    font-size: 36px;
-    line-height: 40px;
+    font-size: 32px;
+    line-height: 36px;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -596,11 +626,17 @@ body {
   padding-top: 1.5rem;
   font-size: 30px;
   line-height: 34px;
+  margin-bottom: 3rem;
 
   @media screen and (max-width: $break-small) {
     padding-top: 1rem;
-    font-size: 26px;
-    line-height: 30px;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 1.25rem;
+  }
+  @media screen and (max-height: 768px) {
+    padding-top: 3.5rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -634,5 +670,42 @@ body {
     .col-3 {
       width: 100%;
     }
+  }
+}
+
+body #fp-nav ul li a span, body .fp-slidesNav ul li a span {
+  background: $white;
+}
+
+.brand-block {
+  margin-bottom: 15px;
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    padding: 10px 0;
+    max-width: 50%;
+  }
+  .brand-logo img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .brand-text {
+    color: $white;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 719px) {  /* 720px */
+  .head-1 {
+    font-size: 2vw;
+    line-height: 2vw;
+    margin-bottom: 2%;
+  }
+
+
+  .brand-block .brand-text {
+    font-size: 1vw;
   }
 }
